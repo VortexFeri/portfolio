@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --color-text: #333;
+    --color-accent: #ffba00;
+    --color-accent-translucent: rgb(255, 186, 0, .25);
+    --color-text-darkmode: #E9E9E9;
+    --color-bg: #e4e4e4;
+    --color-fg: #fff;
+    --color-bg-darkmode: #161616; 
+    --color-fg-darkmode: #222;
+    --color-border: rgb(224, 224, 224);
+    --color-border-darkmode: rgb(66, 66, 66);
+    --typography-primary-font-family: "Lekton";
+    --typography-primary-font-weight: 600;
+    --typography-secondary-font-family: "Poppins";
+    --typography-secondary-font-weight: 400;
+    --typography-text-font-family: "Lekton";
+    --typography-text-font-weight: 300;
+    --typography-accent-font-family: "Roboto";
+    --typography-accent-font-weight: 500;
+    --transition-length: .3s;
+}
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+body {
+    font-family: var(--typography-text-font-family);
+    font-weight: var(--typography-text-font-weight);
+    color: var(--color-text);
+    margin: 0;
+    background: var(--color-bg);
+}
+section {
+    border-radius: 0 0 5px 5px;
+}
+section:not(:first) {
+    border-radius: 5px;
+}
+.accent {
+    color: var(--color-accent);
+    font-family: var(--typography-accent-font-family);
+    font-weight: var(--color-accent);
+}
+
+main {
+    padding: 50px;
+}
+h1 {
+    font-size: 2.1em;
+    margin: 0;
+    font-family: var(--typography-primary-font-family);
+}
+h2 {
+    font-size: 1em;
+    display: inline;
+    margin: 0;
+}
+
+a {
+    font-weight: var(--typography-primary-font-weight);
+    color: var(--color-text);
+}
+
+.title {
+    font-family: var(--typography-primary-font-family);
+}
+.subtitle {
+    font-family: var(--typography-text-font-family);
+}
+#header {
+    display: flex;
+    width: 100%;
+    height: 64px;
+    justify-content: space-between;
+    grid-template-columns: 30px 1fr 30px;
+    grid-template-rows: 1fr 1fr;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 1px var(--color-border);
+    padding: 7px 20px;
+    background-color: var(--color-fg);
+    z-index: 2;
+}
+
+.menu {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 65px;  
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    background-color: var(--color-fg);
+}
+.menu > * {
+    width: 100px;
+    padding: 7px;
+}
+.menu > *:not(:last-child):not(:first-child) {
+    border-left: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+}
+.menu a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 14px;
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: var(--typography-text-font-weight);
+}
+.menu a.active, a:hover {
+    color: var(--color-accent);
+    transition: var(--transition-length);
+}
+.menu i {
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+#header .profile {
+    padding: 0;
+    width: auto;
+    height: 64px;
+    display: grid;
+    grid-template-areas: 
+    "img title"
+    "img subtitle";
+    align-items: center;
+}
+#header .profile img {
+    grid-area: img;
+    width: 42px;
+    margin-right: 20px;
+}
+
+.profile img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+.subtitle:not(h2) {
+    font-size: .8em;
+}
+
+.toggle {
+    position: relative;
+    font-size: 2rem;
+}
+.toggle:hover {
+    cursor: pointer;
+    color: var(--color-accent);
+    transition: var(--transition-length);
+}
+.toggle input {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+}
+
+#home-card.profile {
+    width: clamp(400px, 100%, 480px);
+    background-color: var(--color-fg);
+    margin: auto;
+}
+.profile-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 128px);
+    max-height: 520px;
+    max-height: 620px;
+}
+.profile-content .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 52%;
+    background: url('assets/mountains.jpg') center;
+    background-size: cover;
+}
+.profile-content .slide::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -10%;
+    width: 120%;
+    height: 100px;
+    background-color: var(--color-fg);
+    border-radius: 50% 50% 0 0;
+    overflow: hidden;
+}
+.profile-content img {
+    position: relative;
+    width: 140px;
+    border: 2px solid var(--color-fg);
+    margin: 80px 0 20px;
+    box-shadow: -5px 5px var(--color-accent-translucent);
+}
+.profile-content .subtitle {
+    margin-bottom: 30px;
+}
+.social a {
+    text-decoration: none;
+    margin-inline: 5px;
+    font-size: 1.1em;
+}
+#home-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: -10px 0 var(--color-accent-translucent);
+}
+#home-card .links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-transform: uppercase;
+    display: flex;
+    border-top: 1px solid var(--color-border);
+    height: 64px;
+}
+#home-card .links a {
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    line-height: 64px;
+    text-align: center;
+    font-weight: var(--typography-primary-font-weight);
+}
+
+#home-card .links a:first-child {
+    border-right: 1px solid var(--color-border);
+}
+a i {
+    transition: transform var(--transition-length);
+}
+a:hover i {
+    transform: translateY(-5px);
+}

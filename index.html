@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferencz Carnu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f8628b1f10.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <!-- header profile -->
+        <div class="profile">
+            <div class="image">
+                <img src="assets/profile.png" alt="" width="50px">
+            </div>
+            <div>
+                <div class="title">Ferencz Cârnu</div>
+                <div class="subtitle accent">Aspiring Software Developer</div>
+            </div>
+        </div>
+        <!-- darkmode switch button -->
+        <div class="mode-switch-btn">
+            <label for="mode-switch-radio" class="toggle">
+                <input type="checkbox" id="mode-switch-radio" onchange="setDark(this.checked)">
+                <i class="fa-regular fa-moon"></i>
+            </label>
+        </div>
+    </header>
+
+    <!-- NAVIGATION LiNKS -->
+    <div class="menu">
+        <div>
+            <a class="active" href="#"><i class="fa-regular fa-user"></i>ABOUT</a>
+        </div>
+        <div>
+            <a href="#"><i class="fa-solid fa-clipboard-list"></i>RESUME</a>
+        </div>
+        <div>
+            <a href="#"><i class="fa-solid fa-eye"></i>PROJECTS</a>
+        </div>
+        <div>
+            <a href="#"><i class="fa-regular fa-paper-plane"></i>CONTACT</a>
+        </div>
+    </div>
+
+    <!-- HOME CARD -->
+    <section id="home-card" class="profile">
+        <div class="profile-content">
+            <!-- profile slideshow -->
+            <div class="slide"></div>
+            <!-- profile picture -->
+            <div class="image">
+                <img src="assets/profile.png" alt="">
+            </div>
+            <!-- profile titles -->
+            <h1 class="title">Ferencz Cârnu</h1>
+            <h2 class="subtitle accent">Aspiring Software Developer</h2>
+            <!-- profile socials -->
+            <div class="social">
+                <a target="_blank" href="#"> <span class="fa-brands fa-instagram"></span> </a>
+                <a target="_blank" href="#"> <span class="fa-brands fa-x-twitter"></span> </a>
+                <a target="_blank" href="#"> <span class="fa-brands fa-github"></span> </a>
+            </div>
+        </div>
+        <!-- profile buttons -->
+        <div class="links">
+            <a target="_blank" href="" class="link">
+                <span class="text">Download CV</span>
+                <i class="fa-solid fa-download"></i>
+            </a>
+            <a target="_blank" href="" class="link">
+                <span class="text">Let's talk</span>
+                <i class="fa-regular fa-paper-plane"></i>
+            </a>
+        </div>
+    </section>
+    <main id="main">
+
+    </main>
+
+</body>
+<script src="app.js"></script>
+</html>
