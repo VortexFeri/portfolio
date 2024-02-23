@@ -4,15 +4,15 @@ const fg_color = getComputedStyle(document.documentElement).getPropertyValue('--
 const text_color = getComputedStyle(document.documentElement).getPropertyValue('--color-text');
 const border_color = getComputedStyle(document.documentElement).getPropertyValue('--color-border');
 
-// Function to set dark mode based on a boolean value
-function setDark(dark) {
-    switch_btn.classList.remove(dark ? 'fa-moon' : 'fa-sun');
-    switch_btn.classList.add(dark ? 'fa-sun' : 'fa-moon');
-    document.documentElement.style.setProperty('--color-bg', dark ? getComputedStyle(document.documentElement).getPropertyValue('--color-bg-darkmode') : bg_color);
-    document.documentElement.style.setProperty('--color-fg', dark ? getComputedStyle(document.documentElement).getPropertyValue('--color-fg-darkmode') : fg_color);
-    document.documentElement.style.setProperty('--color-text', dark ? getComputedStyle(document.documentElement).getPropertyValue('--color-text-darkmode') : text_color);
-    document.documentElement.style.setProperty('--color-border', dark ? getComputedStyle(document.documentElement).getPropertyValue('--color-border-darkmode') : border_color);
-    document.body.classList.toggle('dark', dark);
+// Function to set light mode based on a boolean value
+function setlight(light) {
+    switch_btn.classList.remove(light ? 'fa-moon' : 'fa-sun');
+    switch_btn.classList.add(light ? 'fa-sun' : 'fa-moon');
+    document.documentElement.style.setProperty('--color-bg', light ? getComputedStyle(document.documentElement).getPropertyValue('--color-bg-lightmode') : bg_color);
+    document.documentElement.style.setProperty('--color-fg', light ? getComputedStyle(document.documentElement).getPropertyValue('--color-fg-lightmode') : fg_color);
+    document.documentElement.style.setProperty('--color-text', light ? getComputedStyle(document.documentElement).getPropertyValue('--color-text-lightmode') : text_color);
+    document.documentElement.style.setProperty('--color-border', light ? getComputedStyle(document.documentElement).getPropertyValue('--color-border-lightmode') : border_color);
+    document.body.classList.toggle('light', light);
 }
 
 // Function to check if the browser supports cookies
@@ -20,54 +20,36 @@ function supportsCookies() {
     return navigator.cookieEnabled;
 }
 
-// Function to get dark mode preference from cookies (if available)
-function getDarkModeFromCookies() {
+// Function to get light mode preference from cookies (if available)
+function getlightModeFromCookies() {
     if (supportsCookies()) {
-        const darkModeCookie = getCookie('darkMode');
-        return darkModeCookie === 'true';
+        const lightModeCookie = getCookie('lightMode');
+        return lightModeCookie === 'true';
     }
     return undefined; // Return undefined if cookies are not supported or no cookie exists
 }
 
-// Function to set a cookie with dark mode state
-function setDarkModeCookie(dark) {
+// Function to set a cookie with light mode state
+function setlightModeCookie(light) {
     if (supportsCookies()) {
-        setCookie('darkMode', dark ? 'true' : 'false', 365); // Set cookie for a year
+        setCookie('lightMode', light ? 'true' : 'false', 365); // Set cookie for a year
     }
 }
 
-// Function to get system-level dark mode preference (if supported)
-function getSystemDarkModePreference() {
-    if (window.matchMedia && window.matchMedia('(prefers-color: dark)').matches) {
-        return true;
-    }
-    return false;
-}
-
-// Main logic
 window.addEventListener('DOMContentLoaded', () => {
-    // 1. Check for existing dark mode preference in cookies
-    const darkModeFromCookies = getDarkModeFromCookies();
-    if (darkModeFromCookies !== undefined) {
-        setDark(darkModeFromCookies);
-        if (darkModeFromCookies)
+    setlight(true);
+    const lightModeFromCookies = getlightModeFromCookies();
+    if (lightModeFromCookies !== undefined) {
+        setlight(lightModeFromCookies);
+        if (lightModeFromCookies)
             document.getElementById('mode-switch-radio').setAttribute('checked', true);
         else
             document.getElementById('mode-switch-radio').removeAttribute('checked');
-    } else {
-        // 2. Check for system-level dark mode preference (fallback)
-        const systemDarkModePreference = getSystemDarkModePreference();
-        if (systemDarkModePreference) {
-            setDark(true);
-            setDarkModeCookie(true); // Set cookie to remember preference
-            //   document.getElementById('mode-switch-radio').setAttribute('checked', true);
-        }
     }
 
-    // 3. Add event listener to toggle switch
     document.getElementById('mode-switch-radio').addEventListener('change', (event) => {
-        setDark(event.target.checked);
-        setDarkModeCookie(event.target.checked); // Update cookie on switch change
+        setlight(event.target.checked);
+        setlightModeCookie(event.target.checked); // Update cookie on switch change
     });
 });
 
@@ -110,10 +92,32 @@ window.addEventListener('scroll', () => {
         prevScrollY = currentScrollY;
     }
 });
-const links = document.querySelectorAll('.menu a');
-links.forEach(() => addEventListener('click', (e) => {
-    links.forEach(link => {
-        link.classList.toggle('active', link === e.target);
-    })
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('.menu a');
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+        if(top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('.menu a[href*=' + id + ']').classList.add('active');
+            });
+        };
+    });
+};
 
-}));
+
+const overlay = document.getElementById('overlay');
+const iframe = document.querySelector('iframe');
+function showProject(link) {
+    iframe.setAttribute('src', link.getAttribute('data-project-link'));
+    overlay.style.setProperty('display', 'initial');
+    iframe.style.setProperty('display', 'initial');
+}
+overlay.addEventListener('click', () => {
+    overlay.style.setProperty('display', 'none');
+    iframe.style.setProperty('display', 'none');
+})

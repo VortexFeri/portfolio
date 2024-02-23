@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <img class="header-img" src="/assets/projects/botanitalk.png" alt="">
+    <main>
+        <h1>C++ Object Detection Application</h1>
+        <p>University assignment project</p>
+        <h2>Main Features</h2>
+        <ul>
+            <li>Collect data about soil humidity, temperature and environmental light</li>
+            <li>LED strips for when there is no natural light available</li>
+            <li>Water tank and pump for when the soil gets dry</li>
+            <li>splay screen for showing information</li>
+            <li>E-mail notifications</li>
+        </ul>
+        <h2>More details</h2>
+        <p>
+            It is a smart plant box equipped with sensors for monitoring the soil humidity and environmental light, and will try to help the plant grow healthy by automatically providing it with water and light when necessary.
+        </p>
+        <p>
+            It has a TFT screen that shows humidity, light, and temperature information as well as a little face so you know the status of your plant at a first glance.
+        </p>
+        <p>
+            It can connect to the Internet and send you an e-mail in case your plant has been thirsty for a while. This is done by sending a HTTP request with the plant status information to a Webhook configured on IFTTT. This applet triggers an event that sends a preconfigured e-mail containing your information.
+        </p>
+
+        <p>
+            The biggest challenge I had to face was the imminent loss of memory. As the MCU only had 2KB of SRAM, I had to find solutions while implmenting some features, to save as much of it as possible, and not allow the lack of memory affect other features.
+        </p>
+
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="../assets/projects/botanitalk-2.png" alt="">
+            <img src="../assets/projects/botanitalk-1.png" alt="">
+            <img src="../assets/projects/botanitalk-3.png" alt="">
+        </div>
+
+        <h2>Developed Skills</h2>
+        <div class="crumb-list">
+            <span class="crumb">Basic Microcontroller Programming</span>
+            <span class="crumb">SPI Interface</span>
+            <span class="crumb">Arduino UNO</span>
+            <span class="crumb">Memory Management</span>
+        </div>
+
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --color-text-lightmode: #333;
+    --color-accent: 255, 186, 0;
+    --color-accent-translucent: rgb(var(--color-accent), .25);
+    --color-text: #E9E9E9;
+    --color-bg-lightmode: 228, 228, 228;
+    --color-fg-lightmode: 255, 255, 255;
+    --color-bg: 22, 22, 22;
+    --color-fg: 34, 34, 34;
+    --color-border-lightmode: rgb(224, 224, 224);
+    --color-border: rgb(66, 66, 66);
+    --typography-primary-font-family: "Lekton";
+    --typography-primary-font-weight: 600;
+    --typography-secondary-font-family: "Poppins";
+    --typography-secondary-font-weight: 400;
+    --typography-text-font-family: "Lekton";
+    --typography-text-font-weight: 300;
+    --typography-accent-font-family: "Roboto";
+    --typography-accent-font-weight: 500;
+    --transition-length: .3s;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth !important;
+}
+
+.accent {
+    color: rgb(var(--color-accent));
+    font-family: var(--typography-accent-font-family);
+    font-weight: rgb(var(--color-accent));
+}
+
+main {
+    padding: 10px;
+}
+
+h1 {
+    font-size: 2.1em;
+    margin: 0;
+    font-family: var(--typography-primary-font-family);
+}
+
+h2 {
+    font-size: 1em;
+    display: inline;
+    margin: 0;
+}
+
+a {
+    font-weight: var(--typography-primary-font-weight);
+    color: var(--color-text);
+}
+
+.title {
+    font-family: var(--typography-primary-font-family);
+}
+
+.subtitle {
+    font-family: var(--typography-text-font-family);
+}
+
+h4 {
+    font-family: rgb(var(--color-accent));
+    font-size: .8em;
+}
+
+b.accent {
+    font-weight: bold;
+}
+
+.crumb-list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.crumb {
+    font-size: .8em;
+    background: var(--color-border);
+    padding: 1px 10px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 20px rgb(var(--color-fg));
+     border-radius: 0 5px 5px 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0 5px 5px 0;
+    -webkit-box-shadow: inset 0 0 10px rgb(var(--color-accent));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    -webkit-box-shadow: inset 0 0 10px var(--color-accent-translucent);
+  }
+  

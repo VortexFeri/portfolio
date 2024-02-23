@@ -1,0 +1,43 @@
+@import url('../common.css');
+
+body {
+    background-color: #15282a;
+    margin: 0;
+    color: var(--color-text);
+    font-family: var(--typography-text-font-family);
+}
+.header-img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+h1 {
+    font-size: 1.6em;
+}
+h2 {
+    /* margin-bottom: 10px; */
+}
+main {
+    padding: 0 60px 30px 60px;
+}
+.gallery {
+    display: flex;
+    margin: auto;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    margin-bottom: 50px;
+}
+.gallery img {
+    object-fit: contain;
+    width: clamp(400px, 100%, 600px);
+    margin: 10px;
+}
+
+.crumb {
+    font-size: 1.4em;
+    font-size: 600;
+    padding: 5px 10px;
+    background-color: rgba(var(--color-accent), .1);
+    border: 1px solid var(--color-accent-translucent);
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
