@@ -48,7 +48,7 @@
     </div>
 
     <!-- HOME CARD -->
-    <section id="home-card" class="profile">
+    <div id="home-card" class="profile">
         <div class="profile-content">
             <!-- profile slideshow -->
             <div class="slide"></div>
@@ -81,7 +81,7 @@
                 <i class="fa-regular fa-paper-plane"></i>
             </a>
         </div>
-    </section>
+    </div>
     <!-- OTHER SECTIONS -->
     <main id="main">
         <!-- about me -->
@@ -111,7 +111,6 @@
                     <div class="position-info">
                         <div class="position-title">
                             <h3>Networking Internship</h3>
-                            <h4>Siemens LLC</h4>
                         </div>
                         <img class="company-logo" src="assets/logos/siemens.png" alt="Siemens LLC" width="100px">
                     </div>
@@ -135,7 +134,6 @@
                     <div class="position-info">
                         <div class="position-title">
                             <h3>C++ Programming Internship</h3>
-                            <h4>Siemens LLC</h4>
                         </div>
                         <img class="company-logo" src="assets/logos/siemens.png" alt="Siemens LLC" width="100px">
                     </div>
@@ -165,9 +163,8 @@
                     <div class="position-info">
                         <div class="position-title">
                             <h3>Maintenance Operator</h3>
-                            <h4>Miele LLC</h4>
                         </div>
-                        <img class="company-logo" src="assets/logos/miele.png" alt="Miele LLC" width="100px">
+                        <img class="company-logo" src="/assets/logos/miele.png" alt="Miele LLC" width="100px">
                     </div>
                     <p>
                         I got recruited during high school by a recruitment company to work in the maintenance
@@ -203,7 +200,7 @@
                             <h3>Responsive Web Design Course</h3>
                             <h4>freeCodeCamp.org</h4>
                         </div>
-                        <img class="company-logo" src="assets/logos/freecodeCamp.png" alt="">
+                        <img class="company-logo" src="/assets/logos/freecodecamp.png" alt="">
                     </div>
                     <a href="https://www.freecodecamp.org/certification/Ferencz_Carnu/responsive-web-design">
                         See certificate <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -245,7 +242,10 @@
         </section>
     </main>
     <div id="overlay"></div>
-    <iframe src="" frameborder="0"></iframe>
+    <div class="project-popup">
+        <button id="close" onclick="closePopup()"><span class="fa-solid fa-xmark"></span></button>
+        <iframe src="" frameborder="0"></iframe>
+    </div>
 </body>
 <script src="app.js"></script>
 

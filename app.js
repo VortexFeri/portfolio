@@ -84,13 +84,13 @@ function getCookie(name) {
 const nav = document.querySelectorAll('#header, .menu');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
+    // if (window.scrollY > 0) {
 
-        const currentScrollY = window.scrollY;
-        const newColor = getComputedStyle(document.documentElement).getPropertyValue('--color-fg');
-        nav.forEach( (div) => div.style.backgroundColor = `rgb(${newColor})`);
-        prevScrollY = currentScrollY;
-    }
+    //     const currentScrollY = window.scrollY;
+    //     const newColor = getComputedStyle(document.documentElement).getPropertyValue('--color-fg');
+    //     nav.forEach( (div) => div.style.backgroundColor = `rgb(${newColor})`);
+    //     prevScrollY = currentScrollY;
+    // }
 });
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('.menu a');
@@ -103,7 +103,7 @@ window.onscroll = () => {
         if(top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('.menu a[href*=' + id + ']').classList.add('active');
+                document.querySelector(`.menu a[href*=${id}]`).classList.add('active');
             });
         };
     });
@@ -111,13 +111,15 @@ window.onscroll = () => {
 
 
 const overlay = document.getElementById('overlay');
-const iframe = document.querySelector('iframe');
+const iframe = document.querySelector('.project-popup');
 function showProject(link) {
-    iframe.setAttribute('src', link.getAttribute('data-project-link'));
+    document.querySelector('.project-popup iframe').setAttribute('src', link.getAttribute('data-project-link'));
     overlay.style.setProperty('display', 'initial');
     iframe.style.setProperty('display', 'initial');
 }
-overlay.addEventListener('click', () => {
+overlay.addEventListener('click', () => closePopup());
+
+function closePopup() {
     overlay.style.setProperty('display', 'none');
     iframe.style.setProperty('display', 'none');
-})
+}
