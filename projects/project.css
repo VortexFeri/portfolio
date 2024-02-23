@@ -13,11 +13,8 @@ body {
 h1 {
     font-size: 1.6em;
 }
-h2 {
-    /* margin-bottom: 10px; */
-}
 main {
-    padding: 0 60px 30px 60px;
+    padding: 0 30px 30px 30px;
 }
 .gallery {
     display: flex;

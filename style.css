@@ -28,7 +28,7 @@ section {
 #header {
     overflow: hidden;
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: 64px;
     justify-content: space-between;
     align-items: center;
@@ -52,6 +52,7 @@ section {
     flex-direction: row;
     justify-content: center;
     z-index: 3;
+    overflow: hidden;
 }
 
 .menu>* {
@@ -68,7 +69,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4px 14px;
+    padding: 4px 12px;
     text-decoration: none;
     font-size: .8rem;
     font-weight: var(--typography-text-font-weight);
@@ -131,7 +132,7 @@ a:hover {
 }
 
 #home-card.profile {
-    width: clamp(400px, 100%, 480px);
+    width: clamp(300px, 100%, 480px);
     background-color: rgb(var(--color-fg));
     margin: auto;
 }
@@ -268,7 +269,7 @@ a:hover i {
 
 .timeline-section {
     border-left: 1px solid var(--color-border);
-    padding: 0 16px 24px 16px;
+    padding: 0 0 24px 16px;
 }
 
 .timeline-section p {
@@ -331,6 +332,7 @@ a:hover i {
 .cards {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .card {
     width: 300px;
@@ -340,6 +342,7 @@ a:hover i {
     border: 1px solid var(--color-border);
     cursor: pointer;
     margin-right: 20px;
+    margin-top: 20px;
 }
 .card:hover img {
     background-size: 50%;
@@ -501,7 +504,7 @@ a:hover i {
 .project-popup {
     position: fixed;
     inset: 0;
-    width: clamp(400px, 100vw, 900px);
+    width: clamp(300px, 100vw, 900px);
     margin: auto;
     display: none;
     z-index: 3;
