@@ -35,10 +35,11 @@ body {
     background: var(--color-bg);
 }
 section {
-    border-radius: 0 0 5px 5px;
-}
-section:not(:first) {
+    width: 100%;
+    background-color: var(--color-fg);
     border-radius: 5px;
+    padding: 20px 40px;
+    margin-bottom: 10px;
 }
 .accent {
     color: var(--color-accent);
@@ -47,7 +48,7 @@ section:not(:first) {
 }
 
 main {
-    padding: 50px;
+    padding: 10px;
 }
 h1 {
     font-size: 2.1em;
@@ -95,6 +96,8 @@ a {
     flex-direction:row;
     justify-content: center;
     background-color: var(--color-fg);
+    z-index: 2;
+    box-shadow: 0 1px 5px rgba(31, 31, 31, 0.4);
 }
 .menu > * {
     width: 100px;
@@ -218,6 +221,7 @@ a {
     position: relative;
     overflow: hidden;
     box-shadow: -10px 0 var(--color-accent-translucent);
+    padding: 0;
 }
 #home-card .links {
     position: absolute;
@@ -249,4 +253,119 @@ a i {
 }
 a:hover i {
     transform: translateY(-5px);
+}
+
+.section-title, .icon-title {
+    display: block;
+    font-size: 1.5em;
+    border-bottom: 1px solid var(--color-border);
+    width: 100%;
+    padding-bottom: 10px;
+    line-height: 100%;
+}
+.icon-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1em;
+    margin-block: 10px 30px;
+}
+.icon-title span {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: var(--typography-primary-font-weight);
+}
+
+.icon-title span.icon {
+    display:inline-block;
+    line-height: 40px;
+    background-color:var(--color-fg);
+    color:var(--color-accent);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: bottom;
+    border: 1px solid var(--color-accent);
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.timeline-section {
+    border-left: 1px solid var(--color-border);
+    padding: 0 16px 24px 16px;
+}
+.timeline-section p {
+    opacity: .75;
+    margin-bottom: 0;
+    font-size: .8em;
+}
+.timeline-section p.timeline-period {
+    opacity: 1;
+}
+
+.timeline-period {
+    position: relative;
+    width: fit-content;
+    padding: 2px 6px;
+    margin: 0;
+    border: 2px solid var(--color-border);
+    border-radius: 3px;
+    font-size: .7em;
+}
+.timeline-period.accent {
+    border: 1px solid var(--color-accent)
+}
+.timeline-period::before {
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 75%;
+    background-color: var(--color-border);
+    opacity: 1;
+    left: -24px;
+    top: 3px;
+    border-radius: 5px;
+}
+.timeline-period.accent::before {
+    left: -23px;
+    top: -1px;
+}
+.timeline-period.accent::before {
+    background-color: var(--color-accent);
+}
+.position-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.position-info .position-title * {
+    margin-block: 2px;
+    font-size: 1em;
+}
+.position-info img {
+    object-fit: contain;
+    width: 100px;
+    opacity: .8;
+}
+h4 {
+    opacity: .4;
+    font-family: var(--color-accent);
+    font-size: .8em;
+}
+b.accent {
+    font-weight: bold;
+}
+
+.crumb-list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.crumb {
+    font-size: .8em;
+    background: var(--color-border);
+    padding: 1px 10px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border-radius: 5px;
 }
