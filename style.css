@@ -21,7 +21,7 @@ section {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: 5px;
-    padding: 20px 20px;
+    padding: 20px;
     margin-bottom: 10px;
 }
 
@@ -333,6 +333,8 @@ a:hover i {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .card {
     width: 300px;
@@ -446,6 +448,7 @@ a:hover i {
     section {
         margin: auto;
         max-width: 700px;
+        padding: 60px;
     }
 }
 
@@ -476,7 +479,6 @@ a:hover i {
     }
     #home-card {
         height: 100%;
-        overflow: initial;
         box-shadow: 0 15px 16px rgb(var(--color-accent));
         overflow: hidden;
     }
