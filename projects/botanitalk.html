@@ -6,19 +6,26 @@
     <title>Project</title>
     <link rel="stylesheet" href="../common.css">
     <link rel="stylesheet" href="project.css">
+    <script src="https://kit.fontawesome.com/f8628b1f10.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <img class="header-img" src="../assets/projects/botanitalk.png" alt="">
+    <img class="header-img" src="../assets/projects/botanitalk.jpg" alt="">
     <main>
-        <h1>C++ Object Detection Application</h1>
+        <h1>Arduino flower pot sensor measurements</h1>
         <p>University assignment project</p>
+
+        <a target="_blank" href="https://github.com/andreeabrezuica/Botani-Talk">
+            Check the project out <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a> <br><br>
+        
         <h2>Main Features</h2>
         <ul>
             <li>Collect data about soil humidity, temperature and environmental light</li>
-            <li>LED strips for when there is no natural light available</li>
+            <li>UV LED strips for when there is no natural light available</li>
             <li>Water tank and pump for when the soil gets dry</li>
-            <li>splay screen for showing information</li>
-            <li>E-mail notifications</li>
+            <li>Display screen for showing information</li>
+            <li>Web application displaying real-time and historical data, with sensor values periodically stored in a CSV file
+            </li>
         </ul>
         <h2>More details</h2>
         <p>
@@ -28,18 +35,22 @@
             It has a TFT screen that shows humidity, light, and temperature information as well as a little face so you know the status of your plant at a first glance.
         </p>
         <p>
-            It can connect to the Internet and send you an e-mail in case your plant has been thirsty for a while. This is done by sending a HTTP request with the plant status information to a Webhook configured on IFTTT. This applet triggers an event that sends a preconfigured e-mail containing your information.
+            It hosts a web server and stores historical sensor data in a CSV file. You may access the website and check past and current sensor values.
         </p>
 
         <p>
             The biggest challenge I had to face was the imminent loss of memory. As the MCU only had 2KB of SRAM, I had to find solutions while implmenting some features, to save as much of it as possible, and not allow the lack of memory affect other features.
         </p>
 
+        <p>
+            While my teammates assisted with soldering components, 3D-printing and assembling the exterior case. I was responsible for the coding.
+        </p>
+
         <h2>Gallery</h2>
         <div class="gallery">
-            <img src="../assets/projects/botanitalk-2.png" alt="">
             <img src="../assets/projects/botanitalk-1.png" alt="">
             <img src="../assets/projects/botanitalk-3.png" alt="">
+            <img src="../assets/projects/botanitalk-2.png" alt="">
         </div>
 
         <h2>Developed Skills</h2>
@@ -48,8 +59,10 @@
             <span class="crumb">SPI Interface</span>
             <span class="crumb">Arduino UNO</span>
             <span class="crumb">Memory Management</span>
+            <span class="crumb">C++</span>
+            <span class="crumb">Javascript</span>
+            <span class="crumb">HTTP Endpoints</span>
         </div>
-
 
     </main>
 

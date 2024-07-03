@@ -38,3 +38,8 @@ main {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+a:hover {
+    color: rgb(var(--color-accent));
+    transition: var(--transition-length);
+}
